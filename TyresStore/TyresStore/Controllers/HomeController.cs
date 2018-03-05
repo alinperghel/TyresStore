@@ -8,9 +8,14 @@ namespace TyresStore.Controllers
 {
     public class HomeController : Controller
     {
+        VehiclesRepository vehiclesRepo = new VehiclesRepository();
+        TyresRepository tyresRepo = new TyresRepository();
+
         public ActionResult Index()
         {
-            return View();
+            List<Vehicle> vehicles = vehiclesRepo.GetVehicles();
+
+            return View(vehicles);
         }
 
         public ActionResult About()
