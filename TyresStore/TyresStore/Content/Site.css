@@ -22,3 +22,42 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.jumbotron{
+    text-align: center;
+}
+/*
+.call-to-action_buttons {
+    text-align: center;
+}
+
+.lead{
+    text-align:center;
+}
+
+.jumbotron h1{
+    text-align : center;
+}
+
+*/
+
+.shop_goto{
+    display: inline-block;
+}
+
+.vehicles-table{
+    display: inline-block;
+    width: 100%;
+}
+
+.tyres-table{
+    display: inline-block;
+    width: 50%;
+}
+
+
+
+.half{
+    width: 49% !important;
+}

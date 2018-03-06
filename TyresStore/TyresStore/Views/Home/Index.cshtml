@@ -4,22 +4,52 @@
     ViewBag.Title = "Home Page";
 }
 
-@foreach (var Vehicle in Model)
-{
-    <div>
-        @Vehicle.Manufacturer
+<div class="jumbotron">
+    <h1>Welcome to TyreStore</h1>
+    <p class="lead">Call to action text etc. Contact us or Shop now!</p>
+    <p class="call-to-action_buttons"><a href="@Url.Action("Contact", "Home")" class="btn btn-primary btn-lg">Contact us &raquo;</a>
+    <a href="#" class="btn btn-success btn-lg" id="shop_now">Shop now! <span class="glyphicon glyphicon-shopping-cart"></span></a></p>
+</div>
+
+<div class="row" id="shop_goto">
+    <div class="vehicles-table">
+        <h3>Vehicles <span class="label label-default">@Model.Count</span></h3>
+
+        @if (Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Manufacturer</th>
+                        <th>Model</th>
+                        <th>Year</th>
+                        <th>Colour</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var Vehicle in Model)
+                    {
+                        <tr>
+                            <td>@Vehicle.Manufacturer</td>
+                            <td>@Vehicle.Model</td>
+                            <td>@Vehicle.Year</td>
+                            <td>@Vehicle.Color</td>
+                            <td class="button-select"><button type="button" class="btn btn-primary select-vehicle-button" onclick="mainModel.loadTyres(@Vehicle.ID)">Select <span class="glyphicon glyphicon-share-alt"></span></button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
     </div>
-    <div>
-        @Vehicle.Model
+    <div class="tyres-table half">
+        <!-- <div class="header-table"><span class="tyres-title">Tyres</span></div> -->
+        <div class="table-content"></div>
     </div>
-    <div>
-        @Vehicle.Year
-    </div>
-    <div>
-        @Vehicle.Color
-    </div>
-    <hr />
-}
+</div>
+
+
+
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
