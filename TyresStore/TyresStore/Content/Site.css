@@ -61,3 +61,13 @@ textarea {
 .half{
     width: 49% !important;
 }
+
+.cart-button {
+    width: calc(15%-20px);
+    float: right;
+    height: 100%;
+    display: inline-block;
+    font-size: 1.1em;
+    color: white;
+    vertical-align:middle;
+}

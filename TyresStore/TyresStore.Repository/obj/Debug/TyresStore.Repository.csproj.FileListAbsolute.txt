@@ -29,9 +29,9 @@ D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\bin\Debug\EntityFram
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\bin\Debug\EntityFramework.SqlServer.dll
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\bin\Debug\EntityFramework.xml
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\bin\Debug\EntityFramework.SqlServer.xml
-D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csprojResolveAssemblyReference.cache
-D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.Migrations.InitialCreate.resources
-D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csproj.GenerateResource.Cache
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csproj.CoreCompileInputs.cache
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.dll
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.pdb
+D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csprojResolveAssemblyReference.cache
+D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.Migrations.initialmigration.resources
+D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csproj.GenerateResource.Cache

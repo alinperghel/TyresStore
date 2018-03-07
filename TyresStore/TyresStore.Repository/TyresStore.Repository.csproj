@@ -47,13 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasketRepository.cs" />
+    <Compile Include="Interfaces\IBasketRepository.cs" />
     <Compile Include="Interfaces\ITyresRepository.cs" />
     <Compile Include="Interfaces\IVehiclesRepository.cs" />
-    <Compile Include="Migrations\201802261424055_InitialCreate.cs" />
-    <Compile Include="Migrations\201802261424055_InitialCreate.Designer.cs">
-      <DependentUpon>201802261424055_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201803071054135_initial migration.cs" />
+    <Compile Include="Migrations\201803071054135_initial migration.Designer.cs">
+      <DependentUpon>201803071054135_initial migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\Tyre.cs" />
     <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802261424055_InitialCreate.resx">
-      <DependentUpon>201802261424055_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803071054135_initial migration.resx">
+      <DependentUpon>201803071054135_initial migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -23,7 +23,7 @@
                 <td>@tyre.ArticleCode</td>
                 <td>@tyre.Price</td>
                 <td class="button-select">
-                    <button type="button" class="btn btn-primary update-cart-button">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
+                    <button type="button" class="btn btn-primary update-cart-button" onclick="mainModel.updateCart(@tyre.ID, '@tyre.Brand', '@tyre.ArticleCode', '@tyre.Season', @tyre.Price)">Add to cart<span class="glyphicon glyphicon-shopping-cart"></span></button>
                 </td>
             </tr>
             }

@@ -25,9 +25,12 @@ namespace TyresStore
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/colorbox.css"
+                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/customScripts").Include(
+                    "~/Scripts/jquery.colorbox-min.js",
                     "~/Scripts/client/handlers.js",
                     "~/Scripts/client/MainModel.js",
                     "~/Scripts/client/basketModel.js"
