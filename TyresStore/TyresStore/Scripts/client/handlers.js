@@ -1,4 +1,6 @@
-﻿function displayTiresLg(tyresHtml) {
+﻿var mainModel = null;
+
+function displayTiresLg(tyresHtml) {
     //$(".vehicles-table").addClass("half");
         $(".tyres-table .table-content").html("").hide();
         $(".vehicles-table").animate({
@@ -39,6 +41,29 @@ function closeTyres(elem) {
         //console.log(trId);
     }
 
+}
+
+function login(vehicleId = 0) {
+    console.log("click login");
+    var input_username = $("#login-input-username").val();
+    var input_password = $("#login-input-password").val();
+
+    $.ajax({
+        url: "Home/DoLogin",
+        type: "post",
+        data: { username: input_username, password: input_password },
+        success: function (response) {
+            console.log(response);
+            if (response > 0) {
+                // show required tyres.
+                console.log(vehicleId);
+                mainModel.loadTyres(vehicleId);
+            } else {
+                // if fail show form again with error
+                $("#login-span-error").text("Error, try again.");
+            }
+        }
+    });
 }
 
 function updateCartCount() {

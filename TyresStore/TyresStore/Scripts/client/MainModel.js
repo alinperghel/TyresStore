@@ -9,7 +9,7 @@ function MainModel() {
     basketModel.getItems();
 
     this.loadTyres = function (vehicleID) {
-        console.log(this);
+        //console.log(this);
         $.ajax({
             url: "Home/GetTyres",
             type: "get",

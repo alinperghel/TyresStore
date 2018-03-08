@@ -1,0 +1,26 @@
+﻿<h3 style="width:90%; display:inline-block;">Login<span class="label label-default"></span></h3>
+<a><span class="glyphicon glyphicon-remove" onclick="closeTyres(this);"></span></a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="2">Please login in order to view Tyres</th>
+        </tr>
+    </thead>
+    <tbody id="login-form">
+        <tr>
+            <td id="login-label-username">Username</td>
+            <td><input type="text" id="login-input-username" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" id="login-input-password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><span class="text-danger text-center" id="login-span-error"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><a id="login-button" class="btn btn-success" onclick="login(@ViewData.Model);">Login</a></td>
+        </tr>
+    </tbody>
+</table>

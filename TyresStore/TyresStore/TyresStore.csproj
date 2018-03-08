@@ -240,6 +240,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\TyresView.cshtml" />
     <Content Include="Views\Home\BasketView.cshtml" />
+    <Content Include="Views\Home\ReturnLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

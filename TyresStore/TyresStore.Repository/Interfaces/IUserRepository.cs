@@ -11,7 +11,7 @@ namespace TyresStore.Repository.Interfaces
     {
 
         bool CheckLogin(int userId);
-        bool Login(string username, string password);
+        int Login(string username, string password);
         void Logout(int userId);
     }
 }

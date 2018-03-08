@@ -14,31 +14,44 @@ namespace TyresStore.Repository
         TyresStoreContext tyresContext = new TyresStoreContext();
 
         //get ID of User with Username and Password
-        public bool CheckLogin(int userId)
+        public bool CheckLogin(int userId = 0)
         {
-            User user = new User();
-            user = tyresContext.Users.FirstOrDefault(x => x.ID == userId);
+            if(userId > 0)
+            {
+                User user = new User();
+                user = tyresContext.Users.FirstOrDefault(x => x.ID == userId);
 
-            // check datetime
-            DateTime expire_login = DateTime.Now;
-            if(user.ExpireLogin <= expire_login)
+                // check datetime
+                DateTime expire_login = DateTime.Now;
+                if (user.ExpireLogin <= expire_login)
+                {
+                    return false;
+                }
+                return true;
+            }
+            else
             {
                 return false;
             }
-            return true;
+            
         }
 
         //login user
-        public bool Login(string username, string password)
+        public int Login(string username, string password)
         {
             // get user
             User user = new User();
             user = tyresContext.Users.FirstOrDefault(x => x.Username == username);
 
+            // check if user exists else return 0;
+            if(user == null) {
+                return 0;
+            }
+
             // check md5 hashes NICE TO HAVE
             if (password != user.Password)
             {
-                return false;
+                return 0;
             }
 
             // set expire datetime now date + 2 hours
@@ -47,17 +60,25 @@ namespace TyresStore.Repository
 
             tyresContext.SaveChanges();
             // return true on succes
-            return true;
+            return user.ID;
         }
 
         //logout user
         public void Logout(int userId)
         {
-            User user = new User();
-            user = tyresContext.Users.FirstOrDefault(x => x.ID == userId);
-            // set expire now
-            user.ExpireLogin = DateTime.Now;
-            tyresContext.SaveChanges();
+            if(userId > 0)
+            {
+                User user = new User();
+                user = tyresContext.Users.FirstOrDefault(x => x.ID == userId);
+                // set expire now
+                user.ExpireLogin = DateTime.Now;
+                tyresContext.SaveChanges();
+            }
+            else
+            {
+                // do nothing
+            }
+            
         }
     }
 }

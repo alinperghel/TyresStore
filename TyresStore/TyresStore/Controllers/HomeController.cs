@@ -13,6 +13,7 @@ namespace TyresStore.Controllers
         VehiclesRepository vehiclesRepo = new VehiclesRepository();
         TyresRepository tyresRepo = new TyresRepository();
         BasketRepository basketRepo = new BasketRepository();
+        UserRepository userRepo = new UserRepository();
 
         public ActionResult Index()
         {
@@ -22,12 +23,49 @@ namespace TyresStore.Controllers
             return View(vehicles);
         }
 
+        public string ReturnLogin(int vehicleId = 0)
+        {
+            string ret = RenderPartialViewToString("~/Views/Home/ReturnLogin.cshtml", vehicleId);
+            return ret;
+        }
+
+        public int DoLogin(string username, string password)
+        {
+            int UserID = userRepo.Login(username, password);
+            if(UserID >= 1)
+            {
+                Session["UserID"] = UserID;
+                return UserID;
+            }
+            else
+            {
+                Session["UserID"] = 0;
+                return 0;
+            }
+        }
+
+        public ActionResult Logout()
+        {
+            userRepo.Logout(System.Convert.ToInt16(Session["UserID"]));
+            Session["UserID"] = null;
+            return RedirectToAction("Index", "Home");
+        } 
+
         public string GetTyres(int vehicleId)
         {
-            List<Tyre> tyres = tyresRepo.GetTyresByVehicleId(vehicleId);
-            string ret = RenderPartialViewToString("~/Views/Home/TyresView.cshtml", tyres);
+            //check if user is login. If not then show return login
+            if (userRepo.CheckLogin(System.Convert.ToInt16(Session["UserID"])))
+            {
+                List<Tyre> tyres = tyresRepo.GetTyresByVehicleId(vehicleId);
+                string ret = RenderPartialViewToString("~/Views/Home/TyresView.cshtml", tyres);
 
-            return ret;
+                return ret;
+            }
+            else
+            {
+                return ReturnLogin(vehicleId);
+            }
+            
         }
 
         public string GetBasketHtml()
