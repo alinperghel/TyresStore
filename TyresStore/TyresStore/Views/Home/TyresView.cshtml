@@ -1,8 +1,8 @@
 ﻿@model IList<TyresStore.Repository.Models.Tyre>
 
-<h3>Tyres <span class="label label-default">@Model.Count</span>
-    <span class="glyphicon glyphicon-remove" onclick="closeTyres();"></span>
-    </h3>
+<h3 style="width:90%; display:inline-block;">Tyres <span class="label label-default">@Model.Count</span></h3>
+    <a><span class="glyphicon glyphicon-remove" onclick="closeTyres(this);"></span></a>
+    
   
 @if(Model.Count > 0)
 {
@@ -31,4 +31,21 @@
             }
         </tbody>
     </table>
-}
+}else{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Season</th>
+                <th>Article code</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="5">No tires for this vehicle</td>
+            </tr>
+            </tbody>
+    </table>
+            }

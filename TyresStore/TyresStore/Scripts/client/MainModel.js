@@ -9,13 +9,19 @@ function MainModel() {
     basketModel.getItems();
 
     this.loadTyres = function (vehicleID) {
+        console.log(this);
         $.ajax({
             url: "Home/GetTyres",
             type: "get",
             data: { vehicleId: vehicleID },
             success: function (response) {
                 //console.log(response);
-                displayTires(response);
+                if (window.innerWidth > 720) {
+                    displayTiresLg(response);
+                } else {
+                    displayTiresSm(response, vehicleID);
+                }
+                
                 
             }
         });

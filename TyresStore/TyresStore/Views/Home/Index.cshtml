@@ -30,7 +30,7 @@
                 <tbody>
                     @foreach (var Vehicle in Model)
                     {
-                        <tr>
+                        <tr id="vehicle_@Vehicle.ID">
                             <td>@Vehicle.Manufacturer</td>
                             <td>@Vehicle.Model</td>
                             <td>@Vehicle.Year</td>
