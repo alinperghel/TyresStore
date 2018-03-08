@@ -47,5 +47,11 @@ namespace TyresStore.Repository
             tyresContext.BasketItems.Remove(item);
             tyresContext.SaveChanges();
         }
+
+        public void RemoveItems()
+        {
+            tyresContext.BasketItems.RemoveRange(tyresContext.BasketItems.ToList());
+            tyresContext.SaveChanges();
+        }
     }
 }

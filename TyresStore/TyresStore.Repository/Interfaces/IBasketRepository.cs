@@ -16,5 +16,7 @@ namespace TyresStore.Repository.Interfaces
         bool TyreAlreadyAdded(int tyreId);
 
         void RemoveItem(int itemId);
+
+        void RemoveItems();
     }
 }

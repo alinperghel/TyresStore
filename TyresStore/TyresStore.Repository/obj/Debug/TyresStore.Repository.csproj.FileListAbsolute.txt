@@ -33,5 +33,5 @@ D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.dll
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.pdb
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csprojResolveAssemblyReference.cache
-D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.Migrations.initialmigration.resources
+D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.Migrations.initial.resources
 D:\DVSE\Projects\TyreStore\TyresStore\TyresStore.Repository\obj\Debug\TyresStore.Repository.csproj.GenerateResource.Cache

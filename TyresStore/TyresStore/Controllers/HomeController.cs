@@ -44,6 +44,12 @@ namespace TyresStore.Controllers
             return GetBasketHtml();
         }
 
+        public string RemoveItemsFromBasket()
+        {
+            basketRepo.RemoveItems();
+            return GetBasketHtml();
+        }
+
         public ActionResult AddTyreToBasket(int tyreId, string brand, string season, string article, double price )
         {
             bool tyreAdded = basketRepo.TyreAlreadyAdded(tyreId);
@@ -60,18 +66,16 @@ namespace TyresStore.Controllers
             return Json(basketRepo.GetItems(), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult About()
+        public string About()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            string ret = RenderPartialViewToString("~/Views/Home/About.cshtml", false);
+            return ret;
         }
 
-        public ActionResult Contact()
+        public string Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            string ret = RenderPartialViewToString("~/Views/Home/Contact.cshtml", false);
+            return ret;
         }
 
         public string RenderPartialViewToString(string viewName, object model)

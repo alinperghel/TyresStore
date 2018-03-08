@@ -70,6 +70,22 @@
                 _self.basketItems.pop();
                 updateCartCount();
             }
-        })
+        });
+    }
+
+    this.deleteItems = function (){
+        $.ajax({
+            url: "Home/RemoveItemsFromBasket",
+            type: "get",
+            success: function (response) {
+                if (response) {
+                    $('#cboxContent').find('.basket-view').html(response);
+                } else {
+                    $.colorbox.close();
+                }
+                _self.basketItems = [];
+                updateCartCount();
+            }
+        });
     }
 }
